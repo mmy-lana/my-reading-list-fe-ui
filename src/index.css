@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Helvetica Neue Light (300) */
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("./assets/fonts/HelveticaNeueLight.otf") format("opentype");
+  font-weight: 300; /* Light */
+  font-style: normal;
+  font-display: swap; /* Added for font loading strategy to avoid layout shifts */
+}
+
+/* Helvetica Neue Medium (500) */
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("./assets/fonts/HelveticaNeueMedium.otf") format("opentype");
+  font-weight: 500; /* Medium */
+  font-style: normal;
+  font-display: swap; /* Added for font loading strategy to avoid layout shifts */
+}
+
+/* Helvetica Neue Bold (700) */
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("./assets/fonts/HelveticaNeueBold.otf") format("opentype");
+  font-weight: 700; /* Bold */
+  font-style: normal;
+  font-display: swap; /* Added for font loading strategy to avoid layout shifts */
+}
+
+/* Helvetica Neue Light Italic (300) */
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("./assets/fonts/HelveticaNeueLightItalic.otf") format("opentype");
+  font-weight: 300; /* Light */
+  font-style: italic;
+  font-display: swap; /* Added for font loading strategy to avoid layout shifts */
+}
+
+/* Helvetica Neue Bold Italic (700) */
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("./assets/fonts/HelveticaNeueBoldItalic.otf") format("opentype");
+  font-weight: 700; /* Bold */
+  font-style: italic;
+  font-display: swap; /* Added for font loading strategy to avoid layout shifts */
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.auto-slide {
+  display: flex;
+  white-space: nowrap;
+  animation: slide 20s linear infinite;
+  will-change: transform; /* Added to hint browser optimization for animation */
+}
+
+.scrollable-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+}
+
+.scrollable-container {
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+/* Swiper Navigation */
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: -50%;
+  z-index: 10;
+  transform: translateY(0%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+/* Custom styles for the Swiper navigation buttons */
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: transparent; /* Remove background */
+  color: #333; /* Button text color */
+  width: 40px; /* Button width */
+  height: 40px; /* Button height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 18px; /* Adjust the arrow size */
+}
+
+.swiper-wrapper {
+  padding-left: 2rem;
+}
+
+/* Reset the scale or any extra size for active slides */
+.swiper-slide-active {
+  transform: none !important; /* Prevent the scaling transformation */
+  margin-right: 0 !important; /* Remove any additional margin */
+  margin-left: 0 !important; /* Remove any additional margin */
+}
+
+/* Adjust the swiper slide for spacing */
+.swiper-slide {
+  margin-right: 20px; /* Control the space between the slides */
+}
+
+/* Global Scrollbar Styles */
+
+/* Global Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05); /* Slightly transparent */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b0b0b0; /* Soft gray */
+  border-radius: 10px;
+  transition: opacity 0.3s; /* Changed transition to opacity for better performance */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888; /* Darker gray */
+}
+
+/* Dark Mode Scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1); /* Light transparency */
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+/* Firefox scrollbar optimization */
+.scrollbar-hide {
+  scrollbar-width: thin; /* Make the scrollbar thinner */
+  scrollbar-color: #b0b0b0 rgba(0, 0, 0, 0.05); /* Set the scrollbar color */
+}
+
+/* Hiding scrollbar for Webkit browsers (Chrome, Safari) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for specific containers */
+.scrollable-container::-webkit-scrollbar {
+  display: none;
+}
